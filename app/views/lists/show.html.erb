@@ -1,0 +1,19 @@
+
+  <p class="well"><%= @list.name %></p>
+
+  <hr>
+  <%= link_to lists_path do %>
+    <i class="fa-solid fa-arrow-rotate-left"></i> Back to list
+  <% end %>
+</div>
+
+<%= link_to "Add movie", new_list_bookmark_path(@list)%>
+
+
+<p><strong>Bookmarks</strong></p>
+<ul class="list-group">
+  <% @list.movies.each do |movie| %>
+    <li class="list-group-item">rating: <%= list.movie %>/5 - <%= movie.title %></li>
+  <% end %>
+</ul>
+<br>
