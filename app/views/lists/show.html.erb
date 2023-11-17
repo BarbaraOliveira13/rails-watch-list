@@ -1,13 +1,12 @@
 
   <p class="well"><%= @list.name %></p>
-
-  <hr>
   <%= link_to lists_path do %>
-    <i class="fa-solid fa-arrow-rotate-left"></i> Back to list
+     <i class="fa-solid fa-arrow-rotate-left"></i> Back to list
   <% end %>
-</div>
 
-<%= link_to "Add movie", new_list_bookmark_path(@list)%>
+  <%= cl_image_tag(@list.picture.key, height: 300, width: 400, crop: :fill) if @list.picture.attached? %>
+
+<%= link_to "Add movie", new_list_bookmark_path(@list) %>
 
 
 <p><strong>Bookmarks</strong></p>
